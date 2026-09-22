@@ -16,7 +16,7 @@ During the transport stage, milk batch agents interact within a mixing pool and 
 
 The model represents 30 farms with 6 milk batches per farm, giving 180 milk-batch agents in the main simulation setup.
 
-Key parameters used in the main HGT simulation include:
+Key parameters include:
 
 * Initial bacterial load: 10³–10⁴
 * Initial AMR genes: 0, 1, or 2; high-AMR farms may start with 2 or 3
@@ -37,7 +37,7 @@ The model uses four specified HGT probability levels:
 * 0.10
 * 0.20
 
-For each HGT probability, 50 simulation runs can be performed using different random seeds. Each simulation is run for 3 time steps.
+The simulation framework allows multiple runs using different random seeds. Each simulation is run for 3 time steps.
 
 The model tracks:
 
@@ -56,45 +56,31 @@ Defines the milk batch agents, including bacterial growth, AMR gene states, HGT 
 
 ### `model.py`
 
-Defines the ABM-1 model structure, simulation parameters, initialization of milk batches, transport-stage mixing, and model outputs.
+Defines the ABM-1 model structure, simulation parameters, initialization of milk batches, transport-stage mixing, and model calculations.
 
 ### `run.py`
 
-Runs a single demonstration simulation and displays the model outputs for the raw-milk and processing-entry pathways.
+Runs a single demonstration simulation of the model.
 
 ### `multi_run.py`
 
-Runs simulations across the specified HGT probability levels and saves simulation outputs as CSV files.
+Runs the model across the specified HGT probability levels using multiple simulation runs.
 
 ### `plot_hgt_calibration.py`
 
-Generates model calibration and HGT-related visualization figures.
+Contains code for generating HGT-related visualizations.
 
 ### `plot_ABM1_multi_panel_figure.py`
 
-Generates the combined three-panel model figure.
+Contains code for generating model visualizations.
 
 ### `requirements.txt`
 
-Lists the Python packages required to run the model and analysis scripts.
-
-## Figures
-
-### Figure 1 — Horizontal Gene Transfer Probability
-
-![Figure 1](figures/Figure_1.png)
-
-### HGT Calibration
-
-![ABM-1 HGT Calibration](figures/FIG_ABM1_HGT_Calibration.png)
-
-### Multi-Panel Model Figure
-
-![ABM-1 Multi-Panel Figure](figures/FIG_ABM1_MultiPanel_Validation.png)
+Lists the Python packages required to run the model.
 
 ## Reproducibility
 
-The repository contains the model code, simulation scripts, analysis scripts, figures, and required Python packages needed to reproduce the computational workflow.
+The repository contains the model code, simulation scripts, analysis scripts, and required Python packages needed to reproduce the computational workflow.
 
 The software release is also archived in Zenodo.
 
@@ -122,6 +108,7 @@ Please do not present this code, model, or substantial parts of it as your own o
 ## License
 
 This project is released under the MIT License.
+
 
 
 
