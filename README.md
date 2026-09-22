@@ -14,9 +14,9 @@ During the transport stage, milk batch agents interact within a mixing pool and 
 
 ## Model Parameters
 
-The model represents 30 farms with 6 milk batches per farm, giving 180 milk-batch agents in the main experiment.
+The model represents 30 farms with 6 milk batches per farm, giving 180 milk-batch agents in the main simulation setup.
 
-Key parameters used in the main HGT experiment include:
+Key parameters used in the main HGT simulation include:
 
 * Initial bacterial load: 10³–10⁴
 * Initial AMR genes: 0, 1, or 2; high-AMR farms may start with 2 or 3
@@ -28,18 +28,25 @@ Key parameters used in the main HGT experiment include:
 
 HGT occurs during the transport stage. The effective HGT probability depends on the specified HGT probability and the combined bacterial load of interacting milk batches.
 
-## Main HGT Experiment
+## Simulation Setup
 
-The HGT probability was evaluated at 0, 0.05, 0.10, and 0.20.
+The model uses four specified HGT probability levels:
 
-For each HGT probability, 50 simulation runs were performed using different random seeds. Each simulation was run for 3 time steps.
+* 0
+* 0.05
+* 0.10
+* 0.20
 
-The model outputs include:
+For each HGT probability, 50 simulation runs can be performed using different random seeds. Each simulation is run for 3 time steps.
 
-* Fraction of multi-AMR batches (>2 AMR genes)
-* Mean number of AMR genes
-* Number of batches
-* Results for raw-milk supply and processing-entry pathways
+The model tracks:
+
+* AMR gene states of milk batches
+* Bacterial load
+* HGT interactions
+* Number of AMR genes
+* Milk-batch movement through the supply chain
+* Raw-milk supply and processing-entry pathways
 
 ## Files
 
@@ -53,19 +60,19 @@ Defines the ABM-1 model structure, simulation parameters, initialization of milk
 
 ### `run.py`
 
-Runs a single demonstration simulation and prints the model outputs for the raw-milk and processing-entry pathways.
+Runs a single demonstration simulation and displays the model outputs for the raw-milk and processing-entry pathways.
 
 ### `multi_run.py`
 
-Runs the HGT probability experiment across 50 simulations for each HGT probability and saves the results as CSV files.
+Runs simulations across the specified HGT probability levels and saves simulation outputs as CSV files.
 
 ### `plot_hgt_calibration.py`
 
-Generates the HGT calibration, HGT distribution, and pathway-neutrality figures.
+Generates model calibration and HGT-related visualization figures.
 
 ### `plot_ABM1_multi_panel_figure.py`
 
-Generates the combined three-panel validation figure.
+Generates the combined three-panel model figure.
 
 ### `requirements.txt`
 
@@ -81,20 +88,13 @@ Lists the Python packages required to run the model and analysis scripts.
 
 ![ABM-1 HGT Calibration](figures/FIG_ABM1_HGT_Calibration.png)
 
-### Multi-Panel Validation
+### Multi-Panel Model Figure
 
-![ABM-1 Multi-Panel Validation](figures/FIG_ABM1_MultiPanel_Validation.png)
-
-## Results and Data
-
-The simulation results from the HGT probability experiment are provided in the `results/` directory.
-
-* `ABM1_HGT_Sweep_Summary.csv` — Summary statistics for each HGT probability.
-* `ABM1_HGT_Sweep_AllRuns.csv` — Results from all individual simulation runs.
+![ABM-1 Multi-Panel Figure](figures/FIG_ABM1_MultiPanel_Validation.png)
 
 ## Reproducibility
 
-The complete model code, analysis scripts, figures, and simulation results used for ABM-1 are provided in this repository to support reproducibility of the reported analysis.
+The repository contains the model code, simulation scripts, analysis scripts, figures, and required Python packages needed to reproduce the computational workflow.
 
 The software release is also archived in Zenodo.
 
@@ -110,8 +110,8 @@ The paper DOI will be added after publication.
 
 ## Authors and Supervision
 
-- [Muhammad Tulat Fiaz](https://github.com/TalatFiaz454) — Student researcher; data collection, analysis, organization, and documentation
-- [Furqan Awan](https://github.com/furqan915) — Academic supervisor; model development and implementation
+* [Muhammad Tulat Fiaz](https://github.com/TalatFiaz454) — Student researcher; data collection, analysis, organization, and documentation
+* [Furqan Awan](https://github.com/furqan915) — Academic supervisor; model development and implementation
 
 ## Code Use and Attribution
 
@@ -122,6 +122,7 @@ Please do not present this code, model, or substantial parts of it as your own o
 ## License
 
 This project is released under the MIT License.
+
 
 
 
