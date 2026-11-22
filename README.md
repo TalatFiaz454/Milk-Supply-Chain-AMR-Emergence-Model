@@ -88,7 +88,7 @@ The software release is also archived in Zenodo.
 
 If you use this model or code in your research, please cite the associated research paper and software release.
 
-Fiaz, M.T., M.H. Mushtaq, F. Awan and A. Riaz (2026). Detection of Multidrug-Resistant Milk-Associated Psychrotrophic Pseudomonas spp. Using Lab-Based and Agent-Based Modeling Approaches in Pakistan. J. Anim. Plant Sci.
+Fiaz, M. T., Mushtaq, M. H., Awan, F., & Riaz, A. (2027). Detection of multidrug-resistant milk-associated psychrotrophic *Pseudomonas* spp. using lab-based and agent-based modeling approaches in Pakistan. *Journal of Animal and Plant Sciences, 37*(1). https://doi.org/10.36899/JAPS.2027.1.0017
 
 Fiaz, M.T. and F. Awan (2026). Milk Supply Chain AMR Emergence Model (Version v1.0.0). Zenodo. DOI: 10.5281/zenodo.22773612
 
